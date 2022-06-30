@@ -40,7 +40,6 @@ LEFT JOIN product_prices
     ON order_items.product_id = product_prices.product_id
 
 GROUP BY 1,2
-ORDER BY 1
 )
 
 SELECT * FROM final
