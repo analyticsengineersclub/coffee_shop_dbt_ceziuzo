@@ -24,9 +24,15 @@ product_prices AS (
 
 final AS (
     SELECT
-         date_trunc(date(orders.sold_at), week) AS weekly,
-         products.product_category AS product_category,
-         sum(product_prices.price) AS revenue
+         order_items.order_items_id,
+         order_items.order_id,
+         order_items.product_id,
+         orders.customer_id,
+         orders.state,
+         products.product_name,
+         products.product_category,
+         product_prices.price,
+         orders.sold_at,
 
 FROM order_items
 
@@ -38,8 +44,6 @@ LEFT JOIN products
 
 LEFT JOIN product_prices
     ON order_items.product_id = product_prices.product_id
-
-GROUP BY 1,2
 )
 
 SELECT * FROM final
