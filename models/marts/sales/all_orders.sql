@@ -44,6 +44,7 @@ LEFT JOIN products
 
 LEFT JOIN product_prices
     ON order_items.product_id = product_prices.product_id
+    AND orders.sold_at between product_prices.created_at and product_prices.ended_at
 )
 
 SELECT * FROM final
