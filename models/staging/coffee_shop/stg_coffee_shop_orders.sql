@@ -23,7 +23,9 @@ renamed as (
         state,
         zip,
         created_at as sold_at,
-        ranking=1 as is_new_customer
+        case when ranking = 1 then 'new_customer' 
+               else 'returning_customer'
+                end as customer_category
 
     from base
 
