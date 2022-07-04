@@ -33,6 +33,7 @@ final AS (
          products.product_category,
          product_prices.price,
          orders.sold_at,
+         orders.customer_category
 
 FROM order_items
 
