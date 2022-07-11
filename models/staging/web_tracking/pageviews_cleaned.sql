@@ -4,7 +4,7 @@
 
 
 with pageviews as (
-    select * from {{ source('web_tracking', 'pageviews') }}
+    select * from {{ ref('stg_pageviews') }}
 ),
 
 visitors as (
