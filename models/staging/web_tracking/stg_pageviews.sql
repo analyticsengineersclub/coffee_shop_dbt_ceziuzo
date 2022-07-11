@@ -12,7 +12,7 @@ renamed as (
         customer_id,
         device_type,
         page as visited_page,
-        timestamp,
+        timestamp
 
     from source
 
