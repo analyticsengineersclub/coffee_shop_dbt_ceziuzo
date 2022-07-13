@@ -42,6 +42,14 @@ with_session_number as (
             rows between unbounded preceding and current row
         ) as session_number
     from with_session_marker
+),
+
+with_session_ids as (
+    select
+        *,
+        {{ dbt_utils.surrogate_key
+             (['blended_user_id', 'session_number']) }} as session_id
+    from with_session_number
 )
 
-select * from with_session_number
+select * from with_session_ids
