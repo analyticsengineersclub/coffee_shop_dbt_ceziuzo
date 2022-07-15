@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: visitors
+    description: one record per visitor id with their eventual customer_id
+    columns:
+      - name: visitor_id
+        tests:
+          - unique
+          - not_null
+      - name: first_customer_id
+        description: >
+          May be null if the visitor has not yet become a customer.
+          May be duplicated too, in the case where a two separate visitors turned
+          out to be the same customer
