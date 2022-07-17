@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_coffee_shop_product_prices
+    description: Cleaned up data for the product price table
+    columns:
+      - name: product_prices_id
+        description: Primary key of the model
+        tests:
+          - unique
+          - not_null
+          
+      

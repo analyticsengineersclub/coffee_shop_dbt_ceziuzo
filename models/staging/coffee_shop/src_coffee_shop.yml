@@ -37,4 +37,10 @@ sources:
           - name: id
             tests:
               - unique
-              - not_null   
+              - not_null  
+        tests:
+          - dbt_utils.mutually_exclusive_ranges:
+          lower_bound_column: created_at
+          upper_bound_column: ended_at
+          partition_by: product_id
+          gaps: required 
