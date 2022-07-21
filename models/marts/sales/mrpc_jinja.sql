@@ -2,8 +2,7 @@
     materialized='table'
 ) }}
 
-{% set product_category = ["coffee beans", "merch", "brewing supplies"] %}
-
+{% set product_category = dbt_utils.get_column_values(table=ref('stg_coffee_shop_products'), column='product_category') %}
 
 with all_orders as (
     select * from {{ ref('all_orders') }}
