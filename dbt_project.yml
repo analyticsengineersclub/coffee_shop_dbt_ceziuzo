@@ -6,6 +6,19 @@ name: 'coffee_shop'
 version: '1.0.0'
 config-version: 2
 
+
+vars:
+  github_source:
+    github_database: analytics-engineers-club
+    github_schema: github
+    github__using_repo_team: false # by default this is assumed to be true
+
+
+  github:
+    github_database: analytics-engineers-club
+    github_schema: github
+    github__using_repo_team: false # by default this is assumed to be true
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'coffee_shop'
 
